@@ -15,14 +15,16 @@ class Solution(object):
         if divisor == 1:
             return dividend
         
-        sign = -1 if (dividend < 0) ^ (divisor < 0) else 1
+        sign = 1
+        if dividend < 0 and divisor > 0 or dividend > 0 and divisor < 0:
+            sign = -1
         
         n, d = abs(dividend), abs(divisor)
         ans = 0
 
         while n >= d:
             p = 0
-            while n >= (d << p):
+            while n >= (d << p): # d << p --> d * (2 ^ p)
                 p += 1
             
             p -= 1
