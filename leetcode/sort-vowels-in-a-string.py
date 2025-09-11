@@ -13,7 +13,7 @@ class Solution:
 
         # for i in range(len(idxs)):
         #     s = s[:idxs[i]] + lts[i] + s[idxs[i] + 1:]
-        # splicing is costly for runtime
+        # splicing is costly for runtime (this solution was 2494 ms, vs current 87 ms)
 
         vidx = 0
 
