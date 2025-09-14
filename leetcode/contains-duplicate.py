@@ -15,6 +15,11 @@ class Solution:
 
         # return False
 
+        #______________________
+
+        # using a set() is much faster
+        # less passes/checks
+        
         seen = set()
 
         for i in nums:
