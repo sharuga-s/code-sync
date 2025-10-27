@@ -29,5 +29,6 @@ class Solution(object):
 
                     while nums[j] == nums[j-1] and j < k:
                         j += 1
+                        #same thing, we want to ignore checking the same combo
 
         return final
