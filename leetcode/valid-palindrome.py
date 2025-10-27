@@ -5,29 +5,31 @@ class Solution(object):
         :rtype: bool
         """
 
-        # BEATS 5.03%
+        # Two pointer strat, the other is way too slow
 
-        # s = s.lower()
-        # new = ""
-        # for i in range(len(s)):
-        #     if s[i].isalpha() or s[i].isnumeric():
-        #         new += s[i]
+        l = 0
+        r = len(s) - 1
 
-        # while len(new) > 1:
-        #     if new[0] != new[-1]:
-        #         return False
-        #     new = new[1:-1]
-        # return True
-
-        # BEATS 10.09%
-
-        news = ""
-        for i in s:
-            if i >= 'a' and i <= 'z' or i >= 'A' and i <= 'Z' or i >= '0' and i <= '9':
-                news += i
-        s = news
-        print(s)
-        for i in range(len(s)):
-            if s[i].lower() != s[len(s) - i - 1].lower():
+        while l < r:
+            while l < r and not s[l].isalnum():
+                l += 1
+            while l < r and not s[r].isalnum():
+                r -= 1
+        
+            if (s[l].lower() != s[r].lower()):
                 return False
+            
+            l += 1
+            r -= 1
+        
         return True
+        
+        # for i in range(len(s)):
+        #     if ((s[i] >= "A" and s[i] <= "Z") or (s[i] >= 'a' and s[i] <= 'z') or (s[i] >= "0" and s[i] <= "9")):
+        #         final += s[i]
+
+        # for i in range(len(final)):
+        #     if (final[i].lower() != final[len(final) - i - 1].lower()):
+        #         return False
+
+        # return True
