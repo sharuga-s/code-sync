@@ -14,7 +14,7 @@ class Solution(object):
         count = 0
         
         x = min(balmap["b"], balmap["a"], balmap["n"])
-        if balmap["b"] >= x and balmap["a"] >= x and balmap["n"] >= x and balmap["l"] >= (2 * x) and balmap["o"] >= (2 * x):
-            return x
+        # if balmap["b"] >= x and balmap["a"] >= x and balmap["n"] >= x and balmap["l"] >= (2 * x) and balmap["o"] >= (2 * x):
+        #     return x
         
-        return min(balmap["l"] // 2, balmap["o"] // 2)
+        return min(balmap["l"] // 2, balmap["o"] // 2, x)
