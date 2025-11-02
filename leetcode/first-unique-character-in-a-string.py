@@ -1,16 +1,20 @@
-class Solution:
-    def firstUniqChar(self, s: str) -> int:
-        
-        map = {}
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+
+        hm = {}
+
+        for i in s:
+            if i not in hm:
+                hm[i] = 0
+
+            hm[i] += 1
 
         for i in range(len(s)):
-            if s[i] not in map:
-                map[s[i]] = 0
-            map[s[i]] += 1
-
-        print(map)
-        for i in range(len(s)):
-            if map[s[i]] == 1:
+            if hm[s[i]] == 1:
                 return i
 
         return -1
