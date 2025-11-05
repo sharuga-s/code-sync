@@ -12,13 +12,13 @@ class Solution(object):
         :rtype: bool
         """
 
-        return self.check(p, q)
+        return self.dfs(p, q)
 
-    def check(self, p, q):
+    def dfs(self, p, q):
         if not p and not q:
             return True
-            
+
         if not p or not q or p.val != q.val:
             return False
 
-        return self.check(p.left, q.left) and self.check(p.right, q.right)
+        return self.dfs(p.left, q.left) and self.dfs(p.right, q.right)
