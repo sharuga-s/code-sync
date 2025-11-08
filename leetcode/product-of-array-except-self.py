@@ -23,7 +23,7 @@ class Solution(object):
         for i in nums:
             if zero_count == 0:
                 result.append(total // i)
-            elif zero_count == 1:
+            else:
                 if i == 0:
                     result.append(total)
                 else:
