@@ -4,6 +4,7 @@ class Solution(object):
         :type intervals: List[List[int]]
         :rtype: List[List[int]]
         """
+        # this is much faster than .sort() even tho they do the same thing
         intervals.sort(key=lambda x: x[0])
         seen = [intervals[0]]
         intervals = intervals[1:]
