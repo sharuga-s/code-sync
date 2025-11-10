@@ -10,17 +10,11 @@ class Solution(object):
         :rtype: Optional[ListNode]
         """
 
-        temp = ListNode()
-        new = temp
-
-        arr = []
-
+        node = None
         while head:
-            arr.append(head.val)
-            head = head.next
+            temp = head.next
+            head.next = node
+            node = head
+            head = temp
 
-        for i in range(len(arr)-1, -1, -1):
-            new.next = ListNode(arr[i])
-            new = new.next
-
-        return temp.next
+        return node
