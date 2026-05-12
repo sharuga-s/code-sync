@@ -5,19 +5,11 @@ class Solution(object):
         :rtype: int
         """
 
-        maxsum = nums[0]
-        currsum = 0
-
-        # for i in range(len(nums), 0, -1):
-        #     for j in range(len(nums) - i + 1):
-        #         curr = nums[j:i + j]
-        #         currsum = sum(curr)
-        #         if currsum > maxsum:
-        #             maxsum = currsum
-        #             maxarr = curr
+        curr_total = 0
+        max_total = sum(nums)
 
         for i in nums:
-            currsum = max(i, i + currsum)
-            maxsum = max(maxsum, currsum)
-
-        return maxsum
+            curr_total = max(i, i + curr_total)
+            max_total = max(max_total, curr_total)
+        
+        return max_total
